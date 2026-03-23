@@ -13,27 +13,27 @@ const api = axios.create({
 
 // Habits API
 export const habitsAPI = {
-  getAll: () => api.get('/habits'),
-  getById: (id) => api.get(`/habits/${id}`),
-  create: (data) => api.post('/habits', data),
-  update: (id, data) => api.put(`/habits/${id}`, data),
-  delete: (id) => api.delete(`/habits/${id}`),
+  getAll: () => api.get('/api/habits'),
+  getById: (id) => api.get(`/api/habits/${id}`),
+  create: (data) => api.post('/api/habits', data),
+  update: (id, data) => api.put(`/api/habits/${id}`, data),
+  delete: (id) => api.delete(`/api/habits/${id}`),
 };
 
 // Tracking API
 export const trackingAPI = {
-  getToday: () => api.get('/tracking/today'),
-  getByDate: (date) => api.get(`/tracking/date/${date}`),
-  complete: (data) => api.post('/tracking/complete', data),
-  toggle: (data) => api.post('/tracking/toggle', data),
-  getStreak: (habitId) => api.get(`/tracking/streak/${habitId}`),
-  getStats: (habitId, period = 'week') => api.get(`/tracking/stats/${habitId}`, { params: { period } }),
+  getToday: () => api.get('/api/tracking/today'),
+  getByDate: (date) => api.get(`/api/tracking/date/${date}`),
+  complete: (data) => api.post('/api/tracking/complete', data),
+  toggle: (data) => api.post('/api/tracking/toggle', data),
+  getStreak: (habitId) => api.get(`/api/tracking/streak/${habitId}`),
+  getStats: (habitId, period = 'week') => api.get(`/api/tracking/stats/${habitId}`, { params: { period } }),
 };
 
 // Analytics API
 export const analyticsAPI = {
-  getOverview: () => api.get('/tracking/analytics/overview'),
-  getCalendarData: (month) => api.get(`/tracking/analytics/calendar/${month}`),
+  getOverview: () => api.get('/api/tracking/analytics/overview'),
+  getCalendarData: (month) => api.get(`/api/tracking/analytics/calendar/${month}`),
 };
 
 export default api;
